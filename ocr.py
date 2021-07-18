@@ -11,7 +11,7 @@ def extract_data(fn):
 		+r'\s*Name\s*([a-zA-Z ]*)'
 		+r'\s*.*(Breed|Race)\s*([\w ]*)\s*'
 		+r'D.*[Bb].*[xX]\s*([\d-]*)\s*'
-		+r'(\w)\s*C.*th.*\n(\w+)'
+		+r'(\w)\s*C.*th[^\n]*\n(\w+)'
 		,text,flags=re.S)
 	if result is None:
 		return 'no match'
