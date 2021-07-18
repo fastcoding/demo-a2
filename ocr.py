@@ -9,10 +9,10 @@ def extract_data(fn):
 	#print(text)		
 	result=re.search(r'CARD\s*N[Oo].\s*([0-9 ]+)'
 		+r'\s*Name\s*([a-zA-Z ]*)'
-		+r'\s*.*\s*(Breed|Race)\s*([\w ]*)\s*'
+		+r'\s*.*(Breed|Race)\s*([\w ]*)\s*'
 		+r'D.*[Bb].*[xX]\s*([\d-]*)\s*'
 		+r'(\w)\s*C.*th.*\n(\w+)'
-		,text)
+		,text,flags=re.S)
 	if result is None:
 		return 'no match'
 	r=result.groups(1)
